@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: TurnoFacil
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/turnofacil}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+app:
+  time-zone: ${APP_TIME_ZONE:America/Bogota}
+
+turnofacil:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:4200}
+  jwt:
+    issuer: ${JWT_ISSUER:turnofacil-api}
+    # Solo para desarrollo local. Reemplazar JWT_SECRET en cualquier entorno real.
+    secret: ${JWT_SECRET:turnofacil-local-demo-secret-change-me-before-production-2026}
+    expiration: ${JWT_EXPIRATION:PT8H}
+  demo-admin:
+    email: ${DEMO_ADMIN_EMAIL:admin@empresa.com}
+    name: ${DEMO_ADMIN_NAME:Administrador}
+    # Solo para demostración local. Reemplazar DEMO_ADMIN_PASSWORD en producción.
+    password: ${DEMO_ADMIN_PASSWORD:Admin123*}
