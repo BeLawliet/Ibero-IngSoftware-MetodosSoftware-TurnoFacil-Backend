@@ -12,6 +12,9 @@ spring:
   flyway:
     enabled: true
 
+app:
+  time-zone: ${APP_TIME_ZONE:America/Bogota}
+
 turnofacil:
   cors:
     allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:4200}
